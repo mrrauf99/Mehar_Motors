@@ -1,0 +1,20 @@
+{
+  "name": "mehar-motors",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint src next.config.mjs --react-plugin --jsx-a11y-plugin --nextjs-plugin"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "oxlint": "^1.89.0"
+  }
+}

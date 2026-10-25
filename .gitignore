@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+.agents/
+.codex/
+.impeccable/
+.playwright-mcp/
+.taste-skill/
+artifacts/
+skills-lock.json
+playwright-report/
+test-results/
