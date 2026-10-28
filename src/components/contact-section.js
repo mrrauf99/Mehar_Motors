@@ -6,16 +6,16 @@ export function ContactSection() {
     <div className="contact-band">
       <section className="contact-section section-shell" id="contact" aria-labelledby="contact-title" data-reveal>
         <div className="contact-copy">
-          <h2 id="contact-title">Tell us the car and your dates.</h2>
-          <p>Send us your preferred model and dates. We’ll confirm the rate, availability and rental terms with you.</p>
+          <h2 id="contact-title">Tell us which car you need.</h2>
+          <p>Send us the dates you need it. We'll confirm the price, whether it's available and the rental details.</p>
           {whatsAppNumber && <p className="contact-number">WhatsApp <span>+{whatsAppNumber}</span></p>}
         </div>
         {generalWhatsAppUrl ? (
           <a className="button button-primary" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer">
-            Ask on WhatsApp <ArrowIcon />
+            Message us on WhatsApp <ArrowIcon />
           </a>
         ) : (
-          <output className="contact-unavailable">WhatsApp contact details are unavailable right now.</output>
+          <output className="contact-unavailable">Our WhatsApp number isn't available yet.</output>
         )}
       </section>
     </div>

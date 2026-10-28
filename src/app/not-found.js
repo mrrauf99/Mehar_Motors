@@ -13,8 +13,8 @@ export default function NotFound() {
     <SiteFrame>
       <main id="main" className="not-found section-shell">
         <h1>We can’t find that page.</h1>
-        <p>Head to the fleet to browse the cars.</p>
-        <Link className="button button-primary" href="/fleet">Browse the fleet <ArrowIcon /></Link>
+        <p>See our cars and choose one for your trip.</p>
+        <Link className="button button-primary" href="/fleet">See our cars <ArrowIcon /></Link>
       </main>
       <ContactSection />
     </SiteFrame>

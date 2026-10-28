@@ -8,7 +8,7 @@ export function WhatsAppFloat({ href }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Ask Mehar Motors about a rental on WhatsApp"
-      title="Ask about rates and availability"
+      title="Ask about prices and dates"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path

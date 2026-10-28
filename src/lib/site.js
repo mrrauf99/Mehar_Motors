@@ -30,8 +30,8 @@ export function createWhatsAppUrl(number, message) {
 export function createInquiryMessage({ vehicle, date, duration }) {
   const lines = [
     vehicle === "rental vehicle"
-      ? `Hi ${brandName}, I'm looking to rent a car. Could you share your current daily rate and availability?`
-      : `Hi ${brandName}, I'm interested in renting the ${vehicle}. Could you share the daily rate and availability?`,
+      ? `Hi ${brandName}, I'm looking to rent a car. Could you tell me the price per day and whether it's available?`
+      : `Hi ${brandName}, I'd like to rent the ${vehicle}. Could you tell me the price per day and whether it's available?`,
     date && `I'd like to start on ${date}.`,
     duration && `I need the car for ${duration}.`
   ].filter(Boolean);
@@ -45,6 +45,6 @@ export const generalWhatsAppUrl = createWhatsAppUrl(
 );
 
 export function formatDailyRate(rate) {
-  if (typeof rate !== "number" || rate <= 0) return "Rate on request";
+  if (typeof rate !== "number" || rate <= 0) return "Price on request";
   return `PKR ${new Intl.NumberFormat("en-PK").format(rate)}`;
 }

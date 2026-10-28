@@ -14,7 +14,7 @@ function FleetPreview() {
         <div><h2 id="fleet-title">Which car fits<br /><em>your plans?</em></h2></div>
         <div className="section-heading-side">
           <p className="section-intro">
-            Sedans, a sports coupe and SUVs. Choose a model, then ask us about the rate and availability for your dates.
+            Choose from sedans, a sports car and SUVs. Ask us about the price and the dates you need.
           </p>
           <Link className="underlined-link" href="/fleet">See all ten cars <ArrowIcon /></Link>
         </div>
@@ -26,7 +26,7 @@ function FleetPreview() {
         ))}
       </div>
       <p className="image-disclosure">
-        Rates shown are editable sample daily rates, not confirmed quotes. Ask us for the current rate and availability for your dates.
+        Prices are examples and may change. Message us for the current price and to check if a car is available.
       </p>
     </section>
   );
@@ -38,7 +38,7 @@ function FeaturedCollection() {
       <div className="collection-inner section-shell">
         <div className="collection-copy" data-reveal>
           <h2 id="collection-title">Range Rover<br /><em>Land Cruiser.</em></h2>
-          <p>Ask us for the daily rate and availability for your dates.</p>
+          <p>Message us to ask the price and check if it's available for your dates.</p>
           <Link className="button button-light" href="/fleet">See all ten cars <ArrowIcon /></Link>
         </div>
         <div className="collection-photos">
@@ -68,9 +68,9 @@ function FleetIntroduction() {
         </div>
         <div className="about-copy" data-reveal>
           <h2 id="about-title">Ten cars to<br /><em>choose from.</em></h2>
-          <p>The fleet includes executive sedans, a sports coupe, SUVs and everyday cars.</p>
-          <p>Tell us which model and dates you have in mind. We'll confirm the vehicle details, rate, availability and rental terms with you.</p>
-          <Link className="underlined-link" href="/services">What to check before booking <ArrowIcon /></Link>
+          <p>Choose from luxury sedans, a sports car, SUVs and everyday cars.</p>
+          <p>Tell us which car you want and when. We'll confirm the details, price, whether it's available and the rental rules.</p>
+          <Link className="underlined-link" href="/services">What to check before you book <ArrowIcon /></Link>
         </div>
       </section>
     </div>
@@ -82,14 +82,14 @@ function BookingSteps() {
     <section className="approach-section" aria-labelledby="approach-title">
       <div className="approach-inner section-shell">
         <div className="approach-intro" data-reveal>
-          <h2 id="approach-title">Send us the car<br /><em>and your dates.</em></h2>
-          <p>Tell us which car you want, when you need it and for how long.</p>
+          <h2 id="approach-title">Tell us which car<br /><em>and when you need it.</em></h2>
+          <p>Let us know when you need the car and for how long.</p>
           <Link className="underlined-link" href="/services">Before you book <ArrowIcon /></Link>
         </div>
         <ol className="approach-list">
           <li data-reveal>
             <span className="step-number">1</span>
-            <div><h3>Pick a model</h3><p>Ask which year and trim are available for your dates.</p></div>
+            <div><h3>Choose a car</h3><p>Ask which year and version are available for your dates.</p></div>
           </li>
           <li data-reveal>
             <span className="step-number">2</span>
@@ -97,7 +97,7 @@ function BookingSteps() {
           </li>
           <li data-reveal>
             <span className="step-number">3</span>
-            <div><h3>Check the details</h3><p>Confirm the rate, availability, pickup arrangements and rental terms before you book.</p></div>
+            <div><h3>Check the details</h3><p>Confirm the price, pickup arrangements and rental rules before you book.</p></div>
           </li>
         </ol>
       </div>

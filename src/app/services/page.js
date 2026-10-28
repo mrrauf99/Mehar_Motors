@@ -8,17 +8,17 @@ import { siteUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Before You Book | Mehar Motors",
-  description: "Find out what to ask about the car, rate, dates and rental terms before you book with Mehar Motors.",
+  description: "Know what to ask about the car, price, dates and rental details before you book with Mehar Motors.",
   openGraph: {
     title: "Before You Book | Mehar Motors",
-    description: "What to ask about the car, rate, availability and rental terms.",
+    description: "What to ask about the car, price, dates and rental details.",
     type: "website",
     ...(siteUrl ? { url: `${siteUrl}/services` } : {})
   },
   twitter: {
     card: "summary_large_image",
     title: "Before You Book | Mehar Motors",
-    description: "What to ask about the car, rate, availability and rental terms."
+    description: "What to ask about the car, price, dates and rental details."
   },
   ...(siteUrl ? { alternates: { canonical: "/services" } } : {})
 };
@@ -26,7 +26,7 @@ export const metadata = {
 const steps = [
   {
     title: "Choose a car",
-    text: "Ask which year and trim are available for your dates."
+    text: "Ask which year and version are available for your dates."
   },
   {
     title: "Tell us when",
@@ -34,7 +34,7 @@ const steps = [
   },
   {
     title: "Check the details",
-    text: "Ask about the full rate, pickup arrangements and rental terms before you confirm."
+    text: "Ask about the full price, pickup and return, and rental details before you book."
   }
 ];
 
@@ -47,7 +47,7 @@ export default function ServicesPage() {
           path="/services"
           title="Before you"
           emphasis="book."
-          intro="Tell us which car you want and when you need it. We'll confirm the rate, availability and rental terms before you book."
+          intro="Tell us which car you want and when you need it. We'll confirm the price, whether it's available and the rental details before you book."
           vehicle={vehicles[2]}
         />
 
@@ -56,7 +56,7 @@ export default function ServicesPage() {
             <div>
               <h2 id="steps-title">Tell us three<br /><em>things.</em></h2>
             </div>
-            <p className="section-intro">Tell us which car you want, your dates and how long you'll need it. We'll check what's available.</p>
+            <p className="section-intro">Tell us which car you want, when you need it and for how long. We'll check whether it's available.</p>
           </div>
           <ol className="service-step-list">
             {steps.map((step, index) => (
@@ -75,14 +75,14 @@ export default function ServicesPage() {
           <section className="service-note section-shell" aria-labelledby="booking-details-title">
             <div className="service-note-copy" data-reveal>
               <h2 id="booking-details-title">Confirm the details<br />before you book.</h2>
-              <p>Ask us to confirm the car, full daily rate, pickup arrangements and rental terms for your dates.</p>
-              <Link className="button button-primary" href="/fleet">Browse the fleet <ArrowIcon /></Link>
+              <p>Ask us to confirm the car, full price, pickup and return, and rental details for your dates.</p>
+              <Link className="button button-primary" href="/fleet">See our cars <ArrowIcon /></Link>
             </div>
             <ul className="booking-checklist">
-              <li data-reveal><div><h3>Car details</h3><p>Confirm the model year, trim and condition.</p></div></li>
-              <li data-reveal><div><h3>Full rate</h3><p>Ask what the daily rate includes.</p></div></li>
+              <li data-reveal><div><h3>Car details</h3><p>Confirm the year, version and condition.</p></div></li>
+              <li data-reveal><div><h3>Full price</h3><p>Ask what the daily price includes.</p></div></li>
               <li data-reveal><div><h3>Pickup and return</h3><p>Agree where and when you'll collect and return the car.</p></div></li>
-              <li data-reveal><div><h3>Rental terms</h3><p>Review mileage, fuel, deposit and late-return terms.</p></div></li>
+              <li data-reveal><div><h3>Rental details</h3><p>Ask about distance limits, fuel, deposit and late returns.</p></div></li>
             </ul>
           </section>
         </div>

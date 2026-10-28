@@ -6,18 +6,18 @@ import { vehicles } from "@/data/vehicles";
 import { siteUrl } from "@/lib/site";
 
 export const metadata = {
-  title: "Our Car Fleet | Mehar Motors",
-  description: "Browse all ten cars in the Mehar Motors fleet. Ask about the daily rate and availability for your dates.",
+  title: "Our Cars | Mehar Motors",
+  description: "See all ten Mehar Motors cars. Ask us for the price and to check if a car is available for your dates.",
   openGraph: {
-    title: "Our Car Fleet | Mehar Motors",
-    description: "See all ten cars and ask about rates and availability.",
+    title: "Our Cars | Mehar Motors",
+    description: "See all ten cars and ask about prices and dates.",
     type: "website",
     ...(siteUrl ? { url: `${siteUrl}/fleet` } : {})
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Car Fleet | Mehar Motors",
-    description: "See all ten cars and ask about rates and availability."
+    title: "Our Cars | Mehar Motors",
+    description: "See all ten cars and ask about prices and dates."
   },
   ...(siteUrl ? { alternates: { canonical: "/fleet" } } : {})
 };
@@ -32,11 +32,11 @@ export default function FleetPage() {
     <SiteFrame>
       <main id="main">
         <PageHero
-          current="Fleet"
+          current="Cars"
           path="/fleet"
-          title="Browse"
-          emphasis="the fleet."
-          intro="See all ten cars below. Message us with your dates to ask about the daily rate and availability."
+          title="See all"
+          emphasis="our cars."
+          intro="See all ten cars below. Message us with your dates to ask the price and check if the car you want is available."
           vehicle={vehicles[1]}
         />
 
@@ -45,9 +45,9 @@ export default function FleetPage() {
             <div>
               <h2 id="fleet-title">Choose a car<br /><em>for your trip.</em></h2>
             </div>
-            <p className="section-intro">Tell us which car and dates you have in mind. We'll tell you which year and trim are available and share the current rate.</p>
+            <p className="section-intro">Tell us which car you want and when. We'll let you know which year and version we have and how much it costs.</p>
           </div>
-          <nav className="fleet-jump-links" aria-label="Jump to a vehicle type" data-reveal>
+          <nav className="fleet-jump-links" aria-label="Choose a car type" data-reveal>
             {vehicleGroups.map((group) => (
               <a href={`#fleet-${group.id}`} key={group.id}>
                 {group.label}<span>{vehicles.filter((vehicle) => vehicle.bodyStyle === group.bodyStyle).length}</span>
@@ -71,7 +71,7 @@ export default function FleetPage() {
             );
           })}
           <p className="image-disclosure" data-reveal>
-            Rates shown are editable sample daily rates, not confirmed quotes. Ask us for the current rate and availability for your dates.
+            Prices are examples and may change. Message us for the current price and to check if the car you want is available.
           </p>
         </section>
         <ContactSection />

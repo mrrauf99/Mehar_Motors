@@ -26,18 +26,18 @@ export default function HomePage() {
 }
 
 export const metadata = {
-  title: "Mehar Motors | Car Rental",
-  description: "Browse ten cars, from sedans to SUVs. Ask Mehar Motors about current rates and availability for your dates.",
+  title: "Mehar Motors | Car Hire",
+  description: "Choose from ten cars, from sedans to SUVs. Ask Mehar Motors about prices and dates.",
   openGraph: {
-    title: "Mehar Motors | Car Rental",
-    description: "Browse ten cars, from sedans to SUVs, and ask about rates and availability.",
+    title: "Mehar Motors | Car Hire",
+    description: "See ten cars, from sedans to SUVs, and ask about prices and dates.",
     type: "website",
     ...(siteUrl ? { url: siteUrl } : {})
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehar Motors | Car Rental",
-    description: "Browse ten cars, from sedans to SUVs, and ask about rates and availability."
+    title: "Mehar Motors | Car Hire",
+    description: "See ten cars, from sedans to SUVs, and ask about prices and dates."
   },
   ...(siteUrl ? { alternates: { canonical: "/" } } : {})
 };

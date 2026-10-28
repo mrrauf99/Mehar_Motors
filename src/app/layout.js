@@ -14,7 +14,7 @@ const displayFont = localFont({
 const metadata = {
   title: { absolute: "Mehar Motors | Car Rental" },
   description:
-    "Browse ten cars, from sedans to SUVs. Ask Mehar Motors about current rates and availability for your dates.",
+    "Choose from ten cars, from sedans to SUVs. Ask Mehar Motors about prices and dates.",
   applicationName: brandName,
   icons: {
     icon: [{ url: "/brand-favicon.png", type: "image/png", sizes: "64x64" }],
@@ -35,7 +35,7 @@ const metadata = {
     type: "website",
     title: "Mehar Motors | Car Rental",
     description:
-      "Browse ten cars, from sedans to SUVs, and ask about rates and availability.",
+      "See ten cars, from sedans to SUVs, and ask about prices and dates.",
     siteName: brandName,
     locale: "en_PK"
   },
@@ -43,7 +43,7 @@ const metadata = {
     card: "summary_large_image",
     title: "Mehar Motors | Car Rental",
     description:
-      "Browse ten cars, from sedans to SUVs, and ask about rates and availability."
+      "See ten cars, from sedans to SUVs, and ask about prices and dates."
   }
 };
 

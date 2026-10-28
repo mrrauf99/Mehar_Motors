@@ -9,7 +9,7 @@ import { generalWhatsAppUrl } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/fleet", label: "Our fleet" },
+  { href: "/fleet", label: "Our cars" },
   { href: "/services", label: "Before you book" },
   { href: "/#about", label: "About us" },
   { href: "/#contact", label: "Contact" }
@@ -83,7 +83,7 @@ export function Header() {
         <div className="header-actions">
           {generalWhatsAppUrl && (
             <a className="header-cta" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer">
-              Ask on WhatsApp <ArrowIcon />
+              Message us on WhatsApp <ArrowIcon />
             </a>
           )}
           <button
@@ -128,7 +128,7 @@ export function Header() {
         })}
         {generalWhatsAppUrl && (
           <a className="mobile-nav-cta" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-            Ask on WhatsApp <ArrowIcon />
+            Message us on WhatsApp <ArrowIcon />
           </a>
         )}
       </nav>

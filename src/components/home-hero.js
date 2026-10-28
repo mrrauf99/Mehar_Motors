@@ -9,13 +9,13 @@ export function HomeHero() {
       <div className="hero-copy">
         <h1 id="hero-title"><span>Find a car for</span><em>your next trip.</em></h1>
         <p className="hero-description">
-          Browse ten models, from sedans to SUVs. Tell us which car you have in mind and when you need it. We'll confirm the rate and availability.
+          Choose from ten cars, from sedans to SUVs. Tell us which one you need and when. We'll confirm the price and whether it's available.
         </p>
         <div className="hero-actions">
-          <Link className="button button-primary" href="/fleet">Browse the fleet <ArrowIcon /></Link>
+          <Link className="button button-primary" href="/fleet">See our cars <ArrowIcon /></Link>
           {generalWhatsAppUrl && (
             <a className="button button-secondary" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer">
-              Ask on WhatsApp <ArrowIcon />
+              Message us on WhatsApp <ArrowIcon />
             </a>
           )}
         </div>

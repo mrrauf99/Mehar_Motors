@@ -67,7 +67,7 @@
   margin-top: 1.5rem;
   color: var(--copy);
   font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 .hero-actions {
@@ -309,7 +309,7 @@
 .section-intro {
   color: var(--copy);
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 .section-heading-side .underlined-link {
@@ -650,7 +650,7 @@
   margin-top: 1.35rem;
   color: var(--copy);
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 .button-light {
@@ -757,7 +757,7 @@
   margin-top: 1.2rem;
   color: var(--copy);
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .about-copy .underlined-link {
@@ -782,7 +782,7 @@
   margin-top: 1.4rem;
   color: var(--copy);
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 .approach-intro .underlined-link {

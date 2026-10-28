@@ -54,6 +54,7 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
           src={vehicle.image}
           alt={vehicle.alt}
           fill
+          loading={vehicle.id === "mercedes-maybach-s-class" || vehicle.id === "range-rover" ? "eager" : "lazy"}
           sizes="(max-width: 700px) 70vw, (max-width: 1100px) 50vw, 45vw"
           quality={75}
         />
@@ -62,7 +63,7 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
         <div className="vehicle-copy">
           <VehicleHeading>{vehicle.name}</VehicleHeading>
           <p className="vehicle-category">{vehicle.category}</p>
-          <p className="vehicle-rate-label">Daily rental rate <span>Sample</span></p>
+          <p className="vehicle-rate-label">Price per day <span>Example</span></p>
           <p className="vehicle-rate">{formatDailyRate(vehicle.sampleDailyRatePKR)} <span>/ day</span></p>
           {whatsAppNumber && (
             <>
@@ -73,7 +74,7 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
                 aria-controls={`${vehicle.id}-inquiry`}
                 onClick={toggleInquiry}
               >
-                {inquiryOpen ? "Close inquiry" : "Ask about this car"}<ArrowIcon direction={inquiryOpen ? "up" : "down"} />
+                {inquiryOpen ? "Close" : "Ask about this car"}<ArrowIcon direction={inquiryOpen ? "up" : "down"} />
               </button>
               {inquiryRendered && (
                 <form
@@ -83,13 +84,13 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
                   aria-hidden={!inquiryOpen}
                   inert={!inquiryOpen}
                 >
-                  <label htmlFor={`${vehicle.id}-start-date`}>Start date
+                  <label htmlFor={`${vehicle.id}-start-date`}>When do you need it?
                     <input id={`${vehicle.id}-start-date`} name="startDate" type="date" min={minimumDate} required />
                   </label>
-                  <label htmlFor={`${vehicle.id}-duration`}>Rental length (days)
+                  <label htmlFor={`${vehicle.id}-duration`}>How many days?
                     <input id={`${vehicle.id}-duration`} name="duration" type="number" min="1" max="365" step="1" inputMode="numeric" required />
                   </label>
-                  <button className="vehicle-inquiry-submit" type="submit">Continue to WhatsApp <ArrowIcon /></button>
+                  <button className="vehicle-inquiry-submit" type="submit">Send on WhatsApp <ArrowIcon /></button>
                 </form>
               )}
             </>
