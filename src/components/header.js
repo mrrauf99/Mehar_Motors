@@ -76,6 +76,22 @@ export function Header() {
     return () => window.removeEventListener("keydown", handleEscape);
   }, [menuOpen]);
 
+  const renderLinks = (mobile = false) => links.map((link) => {
+    const active = isActiveLink(link);
+    return (
+      <Link
+        href={link.href}
+        key={link.href}
+        className={active ? "is-active" : undefined}
+        aria-current={active ? (link.href.includes("#") && link.href !== "/#top" ? "location" : "page") : undefined}
+        tabIndex={mobile && !menuOpen ? -1 : undefined}
+        onClick={(event) => selectLink(event, link)}
+      >
+        {link.label}{mobile && <ArrowIcon />}
+      </Link>
+    );
+  });
+
   return (
     <header className="site-header">
       <div className="header-inner">
@@ -88,20 +104,7 @@ export function Header() {
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map((link) => {
-            const active = isActiveLink(link);
-            return (
-              <Link
-                href={link.href}
-                key={link.href}
-                className={active ? "is-active" : undefined}
-                aria-current={active ? (link.href.includes("#") && link.href !== "/#top" ? "location" : "page") : undefined}
-                onClick={(event) => selectLink(event, link)}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+          {renderLinks()}
         </nav>
 
         <button
@@ -126,21 +129,7 @@ export function Header() {
         aria-hidden={!menuOpen}
         inert={!menuOpen}
       >
-        {links.map((link) => {
-          const active = isActiveLink(link);
-          return (
-            <Link
-              href={link.href}
-              key={link.href}
-              className={active ? "is-active" : undefined}
-              aria-current={active ? (link.href.includes("#") && link.href !== "/#top" ? "location" : "page") : undefined}
-              tabIndex={menuOpen ? 0 : -1}
-              onClick={(event) => selectLink(event, link)}
-            >
-              {link.label}<ArrowIcon />
-            </Link>
-          );
-        })}
+        {renderLinks(true)}
 
       </nav>
     </header>
