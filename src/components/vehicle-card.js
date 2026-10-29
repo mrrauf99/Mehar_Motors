@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { DimensionalSurface } from "@/components/dimensional-surface";
 import { useEffect, useRef, useState } from "react";
 import { ArrowIcon } from "@/components/arrow-icon";
 import { createInquiryMessage, createWhatsAppUrl, formatDailyRate, whatsAppNumber } from "@/lib/site";
@@ -48,22 +49,22 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
 
   return (
     <article className="vehicle-card" id={vehicle.id} data-reveal>
-      <div className="vehicle-image-wrap">
+      <DimensionalSurface className="vehicle-image-wrap">
         <Image
           className="vehicle-image"
           src={vehicle.image}
           alt={vehicle.alt}
           fill
-          loading={vehicle.id === "mercedes-maybach-s-class" || vehicle.id === "range-rover" ? "eager" : "lazy"}
-          sizes="(max-width: 700px) 70vw, (max-width: 1100px) 50vw, 45vw"
+          loading="lazy"
+          sizes="(max-width: 700px) 92vw, (max-width: 880px) 45vw, 40vw"
           quality={75}
         />
-      </div>
+      </DimensionalSurface>
       <div className="vehicle-meta">
         <div className="vehicle-copy">
           <VehicleHeading>{vehicle.name}</VehicleHeading>
           <p className="vehicle-category">{vehicle.category}</p>
-          <p className="vehicle-rate-label">Price per day <span>Example</span></p>
+          <p className="vehicle-rate-label">Price per day</p>
           <p className="vehicle-rate">{formatDailyRate(vehicle.sampleDailyRatePKR)} <span>/ day</span></p>
           {whatsAppNumber && (
             <>
@@ -71,7 +72,8 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
                 className="vehicle-inquiry-link"
                 type="button"
                 aria-expanded={inquiryOpen}
-                aria-controls={`${vehicle.id}-inquiry`}
+                aria-controls={inquiryRendered ? `${vehicle.id}-inquiry` : undefined}
+                aria-label={`${inquiryOpen ? "Close inquiry for" : "Ask about"} ${vehicle.name}`}
                 onClick={toggleInquiry}
               >
                 {inquiryOpen ? "Close" : "Ask about this car"}<ArrowIcon direction={inquiryOpen ? "up" : "down"} />

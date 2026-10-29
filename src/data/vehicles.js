@@ -1,4 +1,4 @@
-const image = (filename) => `/images/${filename}.webp`;
+const image = (filename) => `/images/ivory/${filename}.webp`;
 
 export const vehicles = [
   {

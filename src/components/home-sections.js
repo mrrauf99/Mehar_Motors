@@ -5,16 +5,14 @@ import { ContactSection } from "@/components/contact-section";
 import { VehicleCard } from "@/components/vehicle-card";
 import { vehicles } from "@/data/vehicles";
 
-const featuredVehicles = [vehicles[6], vehicles[8]];
-
 function FleetPreview() {
   return (
     <section className="fleet-section section-shell" id="fleet" aria-labelledby="fleet-title">
       <div className="section-heading" data-reveal>
-        <div><h2 id="fleet-title">Which car fits<br /><em>your plans?</em></h2></div>
+        <div><h2 id="fleet-title">Find your<br /><em>kind of drive.</em></h2></div>
         <div className="section-heading-side">
           <p className="section-intro">
-            Choose from sedans, a sports car and SUVs. Ask us about the price and the dates you need.
+            Executive sedans, a sports coupe and SUVs. Find the right fit for your journey.
           </p>
           <Link className="underlined-link" href="/fleet">See all ten cars <ArrowIcon /></Link>
         </div>
@@ -26,32 +24,8 @@ function FleetPreview() {
         ))}
       </div>
       <p className="image-disclosure">
-        Prices are examples and may change. Message us for the current price and to check if a car is available.
+        Illustrative vehicle images and sample daily rates. Confirm specifications and a current quote before booking.
       </p>
-    </section>
-  );
-}
-
-function FeaturedCollection() {
-  return (
-    <section className="collection-section" aria-labelledby="collection-title">
-      <div className="collection-inner section-shell">
-        <div className="collection-copy" data-reveal>
-          <h2 id="collection-title">Range Rover<br /><em>Land Cruiser.</em></h2>
-          <p>Message us to ask the price and check if it's available for your dates.</p>
-          <Link className="button button-light" href="/fleet">See all ten cars <ArrowIcon /></Link>
-        </div>
-        <div className="collection-photos">
-          {featuredVehicles.map((vehicle, index) => (
-            <figure className={`collection-photo collection-photo-${index + 1}`} key={vehicle.id} data-reveal>
-              <div>
-                <Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 760px) 86vw, 38vw" quality={75} />
-              </div>
-              <figcaption><span>{vehicle.name}</span><span>{vehicle.category}</span></figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -63,13 +37,13 @@ function FleetIntroduction() {
         <div className="about-image-wrap" data-reveal>
           <span className="about-image-rule" aria-hidden="true" />
           <div className="about-image">
-            <Image src="/images/land-rover-defender.webp" alt="Land Rover Defender" fill sizes="(max-width: 760px) 86vw, 47vw" quality={75} />
+            <Image src={vehicles[6].image} alt={vehicles[6].alt} fill sizes="(max-width: 760px) 86vw, 47vw" quality={75} />
           </div>
         </div>
         <div className="about-copy" data-reveal>
-          <h2 id="about-title">Ten cars to<br /><em>choose from.</em></h2>
-          <p>Choose from luxury sedans, a sports car, SUVs and everyday cars.</p>
-          <p>Tell us which car you want and when. We'll confirm the details, price, whether it's available and the rental rules.</p>
+          <h2 id="about-title">The Mehar<br /><em>approach.</em></h2>
+          <p>A considered choice of cars, from everyday comfort to an occasion worth dressing for.</p>
+          <p>Choose your car with clarity. Confirm the model, price and rental terms before making a booking.</p>
           <Link className="underlined-link" href="/services">What to check before you book <ArrowIcon /></Link>
         </div>
       </section>
@@ -82,7 +56,7 @@ function BookingSteps() {
     <section className="approach-section" aria-labelledby="approach-title">
       <div className="approach-inner section-shell">
         <div className="approach-intro" data-reveal>
-          <h2 id="approach-title">Tell us which car<br /><em>and when you need it.</em></h2>
+          <h2 id="approach-title">Your next trip,<br /><em>in three steps.</em></h2>
           <p>Let us know when you need the car and for how long.</p>
           <Link className="underlined-link" href="/services">Before you book <ArrowIcon /></Link>
         </div>
@@ -109,7 +83,6 @@ export function HomeSections() {
   return (
     <>
       <FleetPreview />
-      <FeaturedCollection />
       <FleetIntroduction />
       <BookingSteps />
       <ContactSection />

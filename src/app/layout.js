@@ -3,12 +3,9 @@ import localFont from "next/font/local";
 import { brandName, siteUrl } from "@/lib/site";
 
 const displayFont = localFont({
-  src: [
-    { path: "./fonts/BodoniModa-Variable.woff2", weight: "400 700", style: "normal" },
-    { path: "./fonts/BodoniModa-Italic-Variable.woff2", weight: "400 700", style: "italic" }
-  ],
+  src: [{ path: "./fonts/Lora-Variable.ttf", weight: "400 700", style: "normal" }],
   display: "swap",
-  variable: "--font-bodoni-moda"
+  variable: "--font-display"
 });
 
 const metadata = {
@@ -51,8 +48,8 @@ if (siteUrl) {
   metadata.metadataBase = new URL(siteUrl);
   metadata.alternates = { canonical: "/" };
   metadata.openGraph.url = siteUrl;
-  metadata.openGraph.images = ["/images/mercedes-s-class.webp"];
-  metadata.twitter.images = ["/images/mercedes-s-class.webp"];
+  metadata.openGraph.images = ["/images/ivory/mercedes-s-class.webp"];
+  metadata.twitter.images = ["/images/ivory/mercedes-s-class.webp"];
 }
 
 export { metadata };
@@ -60,8 +57,8 @@ export { metadata };
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0d0e10",
-  colorScheme: "dark"
+  themeColor: "#f7f7f2",
+  colorScheme: "light"
 };
 
 export default function RootLayout({ children }) {

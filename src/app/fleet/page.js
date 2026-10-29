@@ -50,7 +50,7 @@ export default function FleetPage() {
           <nav className="fleet-jump-links" aria-label="Choose a car type" data-reveal>
             {vehicleGroups.map((group) => (
               <a href={`#fleet-${group.id}`} key={group.id}>
-                {group.label}<span>{vehicles.filter((vehicle) => vehicle.bodyStyle === group.bodyStyle).length}</span>
+                {group.label}<span>{vehicles.filter((vehicle) => group.bodyStyles.includes(vehicle.bodyStyle)).length}</span>
               </a>
             ))}
           </nav>
@@ -71,7 +71,7 @@ export default function FleetPage() {
             );
           })}
           <p className="image-disclosure" data-reveal>
-            Prices are examples and may change. Message us for the current price and to check if the car you want is available.
+            Illustrative vehicle images and sample daily rates. Confirm specifications and a current quote before booking.
           </p>
         </section>
         <ContactSection />

@@ -1,71 +1,24 @@
-@media (min-width: 1500px) {
-  .hero h1 {
-    font-size: clamp(5rem, 5.2vw, 6.1rem);
-  }
-}
+@media (max-width: 960px) {
+  :root { --header-height: 5.25rem; }
 
-@media (max-width: 1050px) {
-  .header-inner {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 1rem;
-  }
-
-  .desktop-nav {
-    gap: 0.8rem;
-  }
-
-  .desktop-nav a {
-    font-size: 0.8125rem;
-  }
-
-  .hero {
-    gap: 2rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.25rem, 5.4vw, 4.9rem);
-  }
-
-  .collection-inner {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  }
-
-}
-
-@media (max-width: 880px) {
-  .hero-image-frame,
-  .page-hero-image {
-    animation: none;
-  }
-
-  .hero h1,
-  .hero-description,
-  .hero-actions,
-  .hero-scroll {
-    animation: none;
-  }
-
-  .hero-image-frame img {
-    filter: none;
-  }
+  .brand-logo { width: 4.5rem; height: 3.25rem; }
 
   .header-inner {
-    min-height: 4.9rem;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.8rem;
+    padding-left: max(var(--gutter), env(safe-area-inset-left));
+    padding-right: max(var(--gutter), env(safe-area-inset-right));
   }
 
   .desktop-nav {
     display: none;
   }
 
-  .header-cta {
-    display: none;
-  }
 
   .menu-toggle {
-    width: 2.8rem;
-    height: 2.8rem;
+    justify-self: end;
+    width: 3rem;
+    height: 3rem;
     display: grid;
     align-content: center;
     justify-items: center;
@@ -100,8 +53,12 @@
     right: 0;
     left: 0;
     display: grid;
-    padding: 0 var(--gutter) 1rem;
-    overflow: hidden;
+    max-height: calc(100dvh - var(--header-height));
+    gap: 0.5rem;
+    padding: 0.75rem max(var(--gutter), env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    overflow-x: hidden;
     background: var(--obsidian);
     opacity: 0;
     pointer-events: none;
@@ -123,10 +80,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding-inline: 0.15rem;
+    padding: 0.5rem 0.25rem;
     color: var(--ink);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
     text-decoration: none;
     opacity: 0;
     transform: translateY(-0.25rem);
@@ -166,35 +124,23 @@
     color: var(--gold);
   }
 
-  .mobile-nav .mobile-nav-cta {
-    min-height: 3.25rem;
-    margin-top: 0.5rem;
-    padding-inline: 1rem;
-    background: var(--gold);
-    color: var(--obsidian);
+}
+
+@media (max-width: 880px) {
+.page-hero-image {
+    animation: none;
+  }
+.hero-actions {
+    animation: none;
   }
 
-  .mobile-nav .mobile-nav-cta .arrow-icon {
-    color: var(--obsidian);
-  }
-
-  .mobile-nav .mobile-nav-cta:hover {
-    background: var(--champagne);
-  }
-
-  .hero {
-    min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: 5.7rem;
-  }
 
   .section-heading {
     display: block;
   }
 
-  .section-heading-side {
+  .section-heading-side,
+  .section-heading > .section-intro {
     margin-top: 1.5rem;
   }
 
@@ -215,44 +161,6 @@
   .page-hero-image {
     border-top-right-radius: 6rem;
     border-bottom-left-radius: 6rem;
-  }
-
-  .hero-copy {
-    max-width: 42rem;
-    padding-bottom: 0;
-  }
-
-  .hero h1 {
-    max-width: 11ch;
-    font-size: clamp(3.5rem, 9vw, 6.2rem);
-  }
-
-  .hero-visual {
-    width: min(100%, 48rem);
-    justify-self: end;
-  }
-
-  .hero-image-frame {
-    aspect-ratio: var(--vehicle-image-ratio);
-    border-radius: 6rem 0 6rem 0;
-  }
-
-  .hero-scroll {
-    bottom: 1.4rem;
-  }
-
-  .collection-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2.5rem;
-  }
-
-  .collection-copy {
-    max-width: 38rem;
-  }
-
-  .collection-photos {
-    width: min(100%, 42rem);
-    justify-self: end;
   }
 
   .about-section {
@@ -311,26 +219,6 @@
     font-size: clamp(1.3rem, 5vw, 1.65rem);
   }
 
-  .collection-inner {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-
-  .collection-photos {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
-    padding-block: 0;
-  }
-
-  .collection-photo {
-    width: 100%;
-  }
-
-  .collection-photo-1,
-  .collection-photo-2 {
-    transform: none;
-  }
-
   .about-image-wrap {
     width: min(100%, 32rem);
     padding-right: 1rem;
@@ -378,6 +266,12 @@
 }
 
 @media (max-width: 430px) {
+  .brand { gap: 0.625rem; }
+
+  .brand-logo { width: 4rem; height: 2.875rem; }
+
+  .brand-name { font-size: 0.9375rem; }
+
   .page-hero h1 {
     font-size: clamp(2.65rem, 11.2vw, 3.35rem);
   }
@@ -388,71 +282,19 @@
     border-bottom-left-radius: 4.5rem;
   }
 
-  .header-inner {
-    gap: 0.45rem;
-  }
-
-  .brand {
-    gap: 0.5rem;
-  }
-
-  .brand-logo {
-    width: 3.6rem;
-    height: 2.4rem;
-  }
-
-  .brand-name {
-    font-size: 0.8125rem;
-    letter-spacing: 0.11em;
-  }
-
-  .menu-toggle {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.05rem, 12vw, 3.7rem);
-  }
-
-  .hero-actions {
+.hero-actions {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .hero-image-frame {
-    border-width: 0.45rem;
-    border-top-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
-  }
-
-  .hero-visual figcaption {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.1rem;
   }
 
   .vehicle-meta {
     align-items: flex-start;
     gap: 0.5rem;
   }
-
-  .collection-copy h2,
-  .section-heading h2,
-  .approach-intro h2,
-  .about-copy h2 {
+.section-heading h2,
+.approach-intro h2,
+.about-copy h2 {
     font-size: clamp(2.8rem, 13vw, 4rem);
-  }
-
-  .collection-photo {
-    padding: 0.4rem;
-  }
-
-  .collection-photo figcaption {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0;
-    font-size: 0.8125rem;
   }
 
   .whatsapp-float {
@@ -471,9 +313,6 @@
     --gutter: 1rem;
   }
 
-  .hero h1 {
-    font-size: 2.9rem;
-  }
 
   .button {
     padding-inline: 0.95rem;
@@ -481,8 +320,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-image-frame,
-  .page-hero-image {
+.page-hero-image {
     animation: none;
   }
 

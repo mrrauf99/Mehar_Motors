@@ -5,10 +5,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowIcon } from "@/components/arrow-icon";
-import { generalWhatsAppUrl } from "@/lib/site";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/#top", label: "Home" },
   { href: "/fleet", label: "Our cars" },
   { href: "/services", label: "Before you book" },
   { href: "/#about", label: "About us" },
@@ -21,9 +20,21 @@ export function Header() {
   const [activeHash, setActiveHash] = useState("");
   const menuButtonRef = useRef(null);
   const closeMenu = () => setMenuOpen(false);
-  const selectLink = (link) => {
+  const selectLink = (event, link) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    if (link.href === "/#top" && pathname === "/") {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "instant" : "smooth" });
+    }
     setActiveHash(link.href.startsWith("/#") ? link.href.slice(1) : "");
     closeMenu();
+  };
+
+  const isActiveLink = (link) => {
+    if (link.href === "/#top") return pathname === "/" && (!activeHash || activeHash === "#top");
+    return link.href.startsWith("/#")
+      ? pathname === "/" && activeHash === link.href.slice(1)
+      : pathname === link.href;
   };
 
   useEffect(() => {
@@ -36,6 +47,21 @@ export function Header() {
       window.removeEventListener("popstate", updateHash);
     };
   }, [pathname]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 961px)");
+    const closeOnDesktop = (event) => {
+      if (!event.matches) return;
+      const header = menuButtonRef.current?.closest("header");
+      const focusInMenu = header?.querySelector(".mobile-nav")?.contains(document.activeElement);
+      if (focusInMenu || document.activeElement === menuButtonRef.current) {
+        header?.querySelector(".brand")?.focus();
+      }
+      setMenuOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return undefined;
@@ -53,8 +79,8 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link className="brand" href="/" onClick={closeMenu}>
-          <Image className="brand-logo" src="/brand_logo.webp" alt="" width={1491} height={1055} sizes="(max-width: 430px) 58px, 72px" loading="eager" />
+        <Link className="brand" href="/#top" onClick={(event) => selectLink(event, links[0])}>
+          <Image className="brand-logo" src="/brand_logo.webp" alt="" width={1491} height={1055} sizes="(max-width: 430px) 64px, (max-width: 960px) 72px, 88px" loading="eager" />
           <span className="brand-name">
             <span>Mehar</span>
             <span>Motors</span>
@@ -63,16 +89,14 @@ export function Header() {
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map((link) => {
-            const active = link.href.startsWith("/#")
-              ? pathname === "/" && activeHash === link.href.slice(1)
-              : pathname === link.href && (!activeHash || link.href !== "/");
+            const active = isActiveLink(link);
             return (
               <Link
                 href={link.href}
                 key={link.href}
                 className={active ? "is-active" : undefined}
-                aria-current={active ? (link.href.includes("#") ? "location" : "page") : undefined}
-                onClick={() => selectLink(link)}
+                aria-current={active ? (link.href.includes("#") && link.href !== "/#top" ? "location" : "page") : undefined}
+                onClick={(event) => selectLink(event, link)}
               >
                 {link.label}
               </Link>
@@ -80,26 +104,19 @@ export function Header() {
           })}
         </nav>
 
-        <div className="header-actions">
-          {generalWhatsAppUrl && (
-            <a className="header-cta" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer">
-              Message us on WhatsApp <ArrowIcon />
-            </a>
-          )}
-          <button
-            ref={menuButtonRef}
-            className="menu-toggle"
-            type="button"
-            aria-controls="mobile-navigation"
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
+        <button
+          ref={menuButtonRef}
+          className="menu-toggle"
+          type="button"
+          aria-controls="mobile-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
 
       <nav
@@ -110,27 +127,21 @@ export function Header() {
         inert={!menuOpen}
       >
         {links.map((link) => {
-          const active = link.href.startsWith("/#")
-            ? pathname === "/" && activeHash === link.href.slice(1)
-            : pathname === link.href && (!activeHash || link.href !== "/");
+          const active = isActiveLink(link);
           return (
             <Link
               href={link.href}
               key={link.href}
               className={active ? "is-active" : undefined}
-              aria-current={active ? (link.href.includes("#") ? "location" : "page") : undefined}
+              aria-current={active ? (link.href.includes("#") && link.href !== "/#top" ? "location" : "page") : undefined}
               tabIndex={menuOpen ? 0 : -1}
-              onClick={() => selectLink(link)}
+              onClick={(event) => selectLink(event, link)}
             >
               {link.label}<ArrowIcon />
             </Link>
           );
         })}
-        {generalWhatsAppUrl && (
-          <a className="mobile-nav-cta" href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-            Message us on WhatsApp <ArrowIcon />
-          </a>
-        )}
+
       </nav>
     </header>
   );
