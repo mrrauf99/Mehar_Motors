@@ -14,7 +14,6 @@
     display: none;
   }
 
-
   .menu-toggle {
     justify-self: end;
     width: 3rem;
@@ -134,13 +133,12 @@
     animation: none;
   }
 
-
   .section-heading {
     display: block;
   }
 
   .section-heading-side,
-  .section-heading > .section-intro {
+.section-heading > .section-intro {
     margin-top: 1.5rem;
   }
 
@@ -185,15 +183,12 @@
   }
 
   .about-section,
-  .service-note {
+.service-note {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 700px) {
-  .footer-inner {
-    padding-block: 1rem;
-  }
 
   .page-hero {
     padding-top: 2.75rem;
@@ -209,7 +204,7 @@
   }
 
   .fleet-grid-home .vehicle-card,
-  .fleet-page-section .vehicle-card {
+.fleet-page-section .vehicle-card {
     grid-column: auto;
     margin-top: 0;
   }
@@ -313,7 +308,6 @@
     --gutter: 1rem;
   }
 
-
   .button {
     padding-inline: 0.95rem;
   }
@@ -329,8 +323,8 @@
   }
 
   *,
-  *::before,
-  *::after {
+*::before,
+*::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -339,6 +333,5 @@
 
   .motion-ready [data-reveal] {
     opacity: 1;
-    transform: none;
   }
 }

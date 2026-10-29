@@ -20,7 +20,7 @@ function FleetPreview() {
 
       <div className="fleet-grid fleet-grid-home">
         {vehicles.slice(0, 4).map((vehicle) => (
-          <VehicleCard vehicle={vehicle} key={vehicle.id} />
+          <VehicleCard vehicle={vehicle} key={vehicle.id} imageSizes="(max-width: 370px) calc(100vw - 2rem), (max-width: 700px) 89.6vw, (max-width: 1504px) 44vw, 660px" />
         ))}
       </div>
       <p className="image-disclosure">
@@ -35,7 +35,6 @@ function FleetIntroduction() {
     <div className="about-band">
       <section className="about-section section-shell" id="about" aria-labelledby="about-title">
         <div className="about-image-wrap" data-reveal>
-          <span className="about-image-rule" aria-hidden="true" />
           <div className="about-image">
             <Image src={vehicles[6].image} alt={vehicles[6].alt} fill sizes="(max-width: 760px) 86vw, 47vw" quality={75} />
           </div>
@@ -62,15 +61,12 @@ function BookingSteps() {
         </div>
         <ol className="approach-list">
           <li data-reveal>
-            <span className="step-number">1</span>
             <div><h3>Choose a car</h3><p>Ask which year and version are available for your dates.</p></div>
           </li>
           <li data-reveal>
-            <span className="step-number">2</span>
             <div><h3>Tell us when</h3><p>Share your start date and how long you need the car.</p></div>
           </li>
           <li data-reveal>
-            <span className="step-number">3</span>
             <div><h3>Check the details</h3><p>Confirm the price, pickup arrangements and rental rules before you book.</p></div>
           </li>
         </ol>

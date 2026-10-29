@@ -26,7 +26,7 @@ export function HomeHero() {
         <div className="showroom-scene">
           <DimensionalSurface className="showroom-depth">
             <div className="showroom-image" key={vehicle.id}>
-              <Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 880px) 100vw, 70vw" quality={84} loading="eager" fetchPriority="high" />
+              <Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 880px) 100vw, (max-width: 1504px) 57vw, 850px" quality={84} loading="eager" fetchPriority="high" />
             </div>
           </DimensionalSurface>
         </div>

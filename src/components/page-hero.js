@@ -11,7 +11,6 @@ export function PageHero({ current, path, title, emphasis, intro, vehicle }) {
           <p className="page-hero-intro">{intro}</p>
         </div>
         <figure className="page-hero-visual" data-reveal>
-          <span className="page-hero-accent" aria-hidden="true" />
           <div className="page-hero-image">
             <Image
               src={vehicle.image}

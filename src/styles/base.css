@@ -215,7 +215,6 @@ p {
   text-transform: uppercase;
 }
 
-
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -271,10 +270,6 @@ p {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-
-
-
 
 .menu-toggle,
 .mobile-nav {

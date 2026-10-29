@@ -29,11 +29,6 @@
   display: block;
 }
 
-.page-hero h1 em {
-  color: var(--champagne);
-  font-style: italic;
-}
-
 .page-hero-intro {
   max-width: 44rem;
   margin-top: 1.5rem;
@@ -48,39 +43,15 @@
   padding: 0.5rem 0.6rem 0.3rem 0;
 }
 
-.page-hero-accent {
-  position: absolute;
-  top: -7%;
-  right: 5%;
-  width: 42%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--charcoal);
-}
-
-.page-hero-accent::after {
-  position: absolute;
-  right: 0;
-  bottom: -75%;
-  width: 70%;
-  height: 28%;
-  transform: skewY(-14deg);
-  background: var(--gold);
-  content: "";
-}
-
 .page-hero-image {
   position: relative;
   overflow: hidden;
   aspect-ratio: var(--vehicle-image-ratio);
-  border: 0.65rem solid var(--surface);
-  border-radius: 0 7rem 0 7rem;
   background: var(--champagne);
 }
 
 .page-hero-image img {
   object-fit: cover;
-  filter: brightness(1.08) saturate(1.08);
   transition: transform 650ms var(--ease-out);
 }
 
@@ -156,10 +127,6 @@
   margin-top: 1.75rem;
 }
 
-.contact-band {
-  background: var(--charcoal);
-}
-
 .contact-section {
   padding-top: clamp(3.75rem, 7vw, 6rem);
   padding-bottom: clamp(3.75rem, 7vw, 6rem);
@@ -183,7 +150,6 @@
 }
 
 .contact-section h2 em {
-  color: var(--champagne);
   font-weight: 400;
 }
 
@@ -237,13 +203,10 @@
 
 .site-footer {
   background: var(--obsidian);
-  color: var(--ivory);
 }
 
 .footer-inner {
   display: flex;
-  justify-content: center;
-  padding-block: 1rem;
 }
 
 .footer-copyright {
@@ -339,25 +302,20 @@
 
 .motion-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(0.8rem);
   transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out);
 }
 
 .motion-ready [data-reveal][data-visible="true"] {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .motion-ready [data-reveal]:focus-within {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .hero-visual:hover .hero-image-frame img,
   .about-image-wrap:hover .about-image img,
-  .vehicle-card:hover .vehicle-image,
-  .collection-photo:hover img {
+.vehicle-card:hover .vehicle-image {
     transform: scale(1.025);
   }
 }

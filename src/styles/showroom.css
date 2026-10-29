@@ -19,20 +19,14 @@
 .showroom-details { display: grid; grid-template-columns: auto auto; gap: 2rem; font-size: 0.9rem; }
 .showroom-details > span:first-child { font-weight: 700; }
 .showroom-caption { margin-top: 1.25rem; color: var(--muted); font-size: 0.8125rem; }
-@keyframes showroom-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes showroom-car-enter { from { opacity: 0; transform: translate3d(40px, 12px, -60px) scale(0.97); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
-
-
-
-
-
+@keyframes showroom-enter { from { transform: translateY(24px); } to { transform: translateY(0); } }
+@keyframes showroom-car-enter { from { transform: translate3d(40px, 12px, -60px) scale(0.97); } to { transform: translate3d(0, 0, 0) scale(1); } }
 
 .button,
 .vehicle-inquiry-submit { border-radius: 100px; background: var(--ink); color: var(--ivory); border: 0; }
 
 .button-primary:hover,
 .vehicle-inquiry-submit:hover { background: var(--gold); color: var(--ivory); }
-.button-secondary { background: var(--surface); color: var(--ink); }
 .button-primary:focus-visible { outline-color: var(--gold); }
 .section-heading h2 em,
 .about-copy h2 em,
@@ -55,8 +49,8 @@
 
 .about-band { background: var(--obsidian); }
 .about-image-wrap { padding: 0; }
-.about-image-rule, .page-hero-accent { display: none; }
-.about-image, .page-hero-image { border: 0; border-radius: 0; }
+.about-image,
+.page-hero-image { border: 0; border-radius: 0; }
 .about-image img,
 .page-hero-image img { filter: none; }
 .approach-section { background: var(--charcoal); }
@@ -71,7 +65,8 @@
 .footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .motion-ready [data-reveal] { transform: translateY(24px); transition-duration: 650ms; }
-.motion-ready [data-reveal][data-visible="true"], .motion-ready [data-reveal]:focus-within { transform: translateY(0); }
+.motion-ready [data-reveal][data-visible="true"],
+.motion-ready [data-reveal]:focus-within { transform: translateY(0); }
 @media (min-width: 881px) and (prefers-reduced-motion: no-preference) {
   .approach-intro { position: sticky; top: 9rem; }
   .approach-list li { padding-block: 2.5rem; }
@@ -95,8 +90,6 @@
   .showroom-selector { width: 100%; }
   .showroom-details { gap: 0.25rem; }
   .showroom-caption { font-size: 0.8125rem; max-width: none; }
-
-
 
   .approach-intro { position: static; }
   .about-image { aspect-ratio: var(--vehicle-image-ratio); }

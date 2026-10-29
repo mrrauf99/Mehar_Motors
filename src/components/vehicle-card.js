@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowIcon } from "@/components/arrow-icon";
 import { createInquiryMessage, createWhatsAppUrl, formatDailyRate, whatsAppNumber } from "@/lib/site";
 
-export function VehicleCard({ vehicle, headingLevel = 3 }) {
+export function VehicleCard({ vehicle, headingLevel = 3, imageSizes = "(max-width: 370px) calc(100vw - 2rem), (max-width: 700px) 89.6vw, (max-width: 880px) 44vw, (max-width: 1504px) 28vw, 420px" }) {
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [inquiryRendered, setInquiryRendered] = useState(false);
   const [minimumDate, setMinimumDate] = useState("");
@@ -56,7 +56,7 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
           alt={vehicle.alt}
           fill
           loading="lazy"
-          sizes="(max-width: 700px) 92vw, (max-width: 880px) 45vw, 40vw"
+          sizes={imageSizes}
           quality={75}
         />
       </DimensionalSurface>
@@ -73,7 +73,7 @@ export function VehicleCard({ vehicle, headingLevel = 3 }) {
                 type="button"
                 aria-expanded={inquiryOpen}
                 aria-controls={inquiryRendered ? `${vehicle.id}-inquiry` : undefined}
-                aria-label={`${inquiryOpen ? "Close inquiry for" : "Ask about"} ${vehicle.name}`}
+                aria-label={`${inquiryOpen ? "Close inquiry for" : "Ask about this car:"} ${vehicle.name}`}
                 onClick={toggleInquiry}
               >
                 {inquiryOpen ? "Close" : "Ask about this car"}<ArrowIcon direction={inquiryOpen ? "up" : "down"} />

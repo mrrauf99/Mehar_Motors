@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { brandName, siteUrl } from "@/lib/site";
 
 const displayFont = localFont({
-  src: [{ path: "./fonts/Lora-Variable.ttf", weight: "400 700", style: "normal" }],
+  src: [{ path: "./fonts/Lora-Variable.woff2", weight: "400 700", style: "normal" }],
   display: "swap",
   variable: "--font-display"
 });
