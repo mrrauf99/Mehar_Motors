@@ -22,7 +22,7 @@ Mehar Motors makes it easy to explore a collection of ten vehicles for your next
 
 The ten images in `public/images/ivory/` are AI-generated concept renders made for the light showroom design. They illustrate vehicle models, not verified photos of rental stock. Image paths and editable sample prices live in `src/data/vehicles.js`. Confirm actual model year, specification, availability and rental quote before booking.
 
-Display typography uses self-hosted Lora under its included SIL Open Font License (`src/app/fonts/Lora-OFL.txt`).
+Typography pairs self-hosted Bodoni Moda for headings with Manrope for body text and controls. Both include their SIL Open Font Licenses in `src/app/fonts/`.
 
 ## Development
 
@@ -32,7 +32,7 @@ Display typography uses self-hosted Lora under its included SIL Open Font Licens
 
 ## Performance and maintenance
 
-Lora is served as a local WOFF2 font with the same glyphs, metrics and variable weights as the original TTF. Hero entrances retain their movement while rendering content from the first frame. Fleet cards accept image sizes matching each parent grid. Navigation uses one shared link renderer, and scroll reveals observe newly added subtrees instead of rescanning the entire page on each mutation.
+Bodoni Moda and Manrope are served as local variable WOFF2 fonts. Display text uses regular weight with a fixed optical size to keep fine strokes visible; multiline headings use a line height of 1.08. The hero image has no hover tilt, while its entrance and vehicle selector remain active. Fleet cards accept image sizes matching each parent grid. Navigation uses one shared link renderer, and scroll reveals observe newly added subtrees instead of rescanning the entire page on each mutation.
 
 The optimization pass preserved computed layouts at 390, 768 and 1440 pixels on all three pages. Browser checks covered the vehicle selector, all ten image paths, inquiry validation/message generation, navigation, mobile-menu controls, reduced motion and the dynamic copyright year. No dedicated test script is currently defined.
 

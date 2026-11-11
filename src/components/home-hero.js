@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowIcon } from "@/components/arrow-icon";
-import { DimensionalSurface } from "@/components/dimensional-surface";
 import { vehicles } from "@/data/vehicles";
 import { formatDailyRate } from "@/lib/site";
 
@@ -24,11 +23,11 @@ export function HomeHero() {
           </div>
         </div>
         <div className="showroom-scene">
-          <DimensionalSurface className="showroom-depth">
+          <div className="showroom-depth">
             <div className="showroom-image" key={vehicle.id}>
               <Image src={vehicle.image} alt={vehicle.alt} fill sizes="(max-width: 880px) 100vw, (max-width: 1504px) 57vw, 850px" quality={84} loading="eager" fetchPriority="high" />
             </div>
-          </DimensionalSurface>
+          </div>
         </div>
       </div>
       <div className="showroom-bottom section-shell">

@@ -5,7 +5,7 @@
 .showroom-copy h1 { font-size: clamp(3.5rem, 5.8vw, 6rem); line-height: 1.08; letter-spacing: -0.035em; animation: showroom-enter 800ms var(--ease-out) both; }
 .showroom-copy > p { max-width: 23rem; margin-top: 2rem; color: var(--copy); font-size: 1.0625rem; animation: showroom-enter 800ms 90ms var(--ease-out) both; }
 .showroom-copy .hero-actions { gap: 1.25rem; margin-top: 1.75rem; animation: showroom-enter 800ms 160ms var(--ease-out) both; }
-.showroom-scene { position: relative; width: 110%; margin-left: 0; perspective: 1400px; }
+.showroom-scene { position: relative; width: 110%; margin-left: 0; }
 .showroom-depth { width: 100%; aspect-ratio: 1.35; }
 .dimensional-surface { transform: perspective(1400px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform 500ms var(--ease-out); }
 .showroom-image { position: absolute; inset: 0; animation: showroom-car-enter 1000ms var(--ease-out) both; }
@@ -17,7 +17,7 @@
 .showroom-selector button:hover { background: var(--surface); color: var(--ink); }
 .showroom-selector button:active { transform: scale(0.96); }
 .showroom-details { display: grid; grid-template-columns: auto auto; gap: 2rem; font-size: 0.9rem; }
-.showroom-details > span:first-child { font-weight: 700; }
+.showroom-details > span:first-child { font-weight: 600; }
 .showroom-caption { margin-top: 1.25rem; color: var(--muted); font-size: 0.8125rem; }
 @keyframes showroom-enter { from { transform: translateY(24px); } to { transform: translateY(0); } }
 @keyframes showroom-car-enter { from { transform: translate3d(40px, 12px, -60px) scale(0.97); } to { transform: translate3d(0, 0, 0) scale(1); } }
@@ -41,7 +41,7 @@
 .fleet-grid-home { gap: 4rem 2rem; }
 .vehicle-image-wrap { border: 0; background: var(--charcoal); overflow: hidden; }
 .vehicle-image { filter: none; }
-.vehicle-meta :is(h3,h4) { min-height: 0; font-family: var(--sans); font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: -0.04em; }
+.vehicle-meta :is(h3,h4) { min-height: 0; font-family: var(--sans); font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 500; letter-spacing: -0.025em; }
 .vehicle-category { font-size: 0.9rem; }
 .vehicle-rate-label { font-size: 0.8125rem; color: var(--muted); font-weight: 400; margin-top: 1rem; }
 .vehicle-rate { color: var(--ink); font-size: 1.1rem; }
@@ -55,11 +55,10 @@
 .page-hero-image img { filter: none; }
 .approach-section { background: var(--charcoal); }
 .approach-list li { grid-template-columns: 1fr; padding-block: 1.6rem; }
-.approach-list .step-number { display: none; }
-.approach-list h3 { font-family: var(--sans); font-size: 1.4rem; letter-spacing: -0.035em; }
+.approach-list h3 { font-family: var(--sans); font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 .contact-band { background: var(--surface); }
 .site-footer { color: var(--ink); padding-top: 3rem; }
-.footer-wordmark { font-family: var(--serif); font-size: clamp(2.6rem, 9vw, 8rem); line-height: 1.1; letter-spacing: -0.035em; padding-bottom: 2rem; }
+.footer-wordmark { font-family: var(--serif); font-size: clamp(2.6rem, 9vw, 8rem); font-weight: var(--display-weight); font-optical-sizing: none; font-variation-settings: "opsz" 18; line-height: 1.1; letter-spacing: -0.035em; padding-bottom: 2rem; }
 .footer-inner { justify-content: space-between; align-items: center; gap: 1.5rem; padding-block: 1.5rem 2rem; padding-right: calc(var(--gutter) + 3.5rem); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 1rem; }
 .footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }

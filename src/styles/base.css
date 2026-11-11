@@ -17,7 +17,8 @@
   --header-height: 6rem;
   --vehicle-image-ratio: 1.42;
   --serif: var(--font-display), Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
+  --sans: var(--font-text), Arial, Helvetica, sans-serif;
+  --display-weight: 400;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -37,9 +38,11 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-kerning: normal;
 }
 
 button,
@@ -47,6 +50,7 @@ input,
 select,
 textarea {
   font-family: var(--sans);
+  font-weight: 500;
 }
 
 a {
@@ -100,15 +104,17 @@ h2,
 h3,
 h4 {
   font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-weight: var(--display-weight);
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 18;
+  letter-spacing: -0.025em;
   text-wrap: balance;
 }
 
 h1 em,
 h2 em {
   color: var(--gold);
-  font-weight: 400;
+  font-weight: inherit;
 }
 
 p {
@@ -209,7 +215,7 @@ p {
   gap: 0.04rem;
   color: var(--ink);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   line-height: 1.12;
   text-transform: uppercase;

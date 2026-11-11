@@ -3,9 +3,16 @@ import localFont from "next/font/local";
 import { brandName, siteUrl } from "@/lib/site";
 
 const displayFont = localFont({
-  src: [{ path: "./fonts/Lora-Variable.woff2", weight: "400 700", style: "normal" }],
+  src: [{ path: "./fonts/BodoniModa-Variable.woff2", weight: "400 700", style: "normal" }],
   display: "swap",
+  adjustFontFallback: "Times New Roman",
   variable: "--font-display"
+});
+
+const textFont = localFont({
+  src: [{ path: "./fonts/Manrope-Variable.woff2", weight: "400 700", style: "normal" }],
+  display: "swap",
+  variable: "--font-text"
 });
 
 const metadata = {
@@ -63,7 +70,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={displayFont.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={`${displayFont.variable} ${textFont.variable}`} data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );
